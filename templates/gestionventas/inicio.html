@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Este es un proyecto creado con django para coderhouse" />
+        <meta name="author" content="juan huertas" />
+        <title>Luxurycars Latam para coderhouse</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/static/gestionventas/assets/favicon.ico" /> 
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/static/gestionventas/css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{% url 'inicio' %}">Luxury Cars Latinoamerica</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">Quienes Somos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'marcas' %}">Marcas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- INICIO CONTENIDO DINAMICO DE PAGINA-->
+            
+                {% block contenidoquecambia %}
+
+                <strong>{{ mensaje }}</strong>
+                            <!-- Header-->
+            <header class="bg-dark py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-white mb-2">Encuentra el Auto de tus sueños en luxury cars Latam</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">Ofrecemos grandes marcas de lujo para los gustos mas exclusivos y refinados de todo latinoamerica, supervehiculos, y coches de referencias especiales pregunte por el suyo.</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-outline-light btn-lg px-4" href="{% url 'nosotros' %}">Conocer Mas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://live.staticflickr.com/65535/51883082530_ae1e75707f.jpg" alt="..." /></div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="py-5" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Acompañamiento y servicios de preventa y postventa</h2></div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                                    <h2 class="h5">Portafolio Robusto</h2>
+                                    <p class="mb-0">Disponemos de un amplio portafolio de marcas top premium en distintas categorias para los gustos mas exclusivos</p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                                    <h2 class="h5">Nos Adaptamos a sus necesidades</h2>
+                                    <p class="mb-0">Servicios bajo demanda, tramites de importación, seguros, mecanicos autorizados, entre otros</p>
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                    <h2 class="h5">En las mayores ciudades de Latam</h2>
+                                    <p class="mb-0">Disponemos de locación en las principales de ciudades de latinoameria, pregunte por la soya y con gusto le atenderemos personalmente.</p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                    <h2 class="h5">Vehiculos de las mas altas prestaciones</h2>
+                                    <p class="mb-0">Somos distribuidores oficiales para latam de las más prestigiosas casas (Ferrari, Lamborghini, Porsche, Aston Martin entre otras arribos de nuevos vehículos cada semana. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial section-->
+            <div class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10 col-xl-7">
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 fst-italic">"Como empresa estamos orgullosos de los productos y servicios que vendemos porque cada uno de todas las personas que trabajamos en esta compañía aportamos nuestro conocimiento y experiencia día tras día para dejar la camiseta por nuestros clientes en cada operación; eso nos diferencia de la competencia y nos lleva a las alturas en los negocios."</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="rounded-circle me-3" src="https://live.staticflickr.com/65535/51882540118_5d74e6877f_t.jpg" alt="..." />
+                                    <div class="fw-bold">
+                                        Juan Huertas
+                                        <span class="fw-bold text-primary mx-1">/</span>
+                                        CEO, Luxurycars Latam
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </section>
+        </main>
+
+            {% endblock contenidoquecambia %}
+            
+            <!-- FIN CONTENIDO DINAMICO DE PAGINA-->
+                
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; LUXURYCARS LATAM 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Politica de Privacidad</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terminos y Condiciones</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contactenos</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/static/gestionventas/js/scripts.js"></script>
+    </body>
+</html>
