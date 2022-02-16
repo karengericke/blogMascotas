@@ -39,6 +39,7 @@ _El proyecto fue realizado por Karen Gericke y Leandro Garcia_
 
 * **Karen Gericke** - *Trabajo grupal* - [karengericke](https://github.com/karengericke)
 * **Leandro Garcia** - *Trabajo grupal* - [leandrogarcia30](https://github.com/LeandroGarcia30)
+* **Juan Huertas** - *Colaboración inicial* 
 
 
 ## Gratitud 🎁

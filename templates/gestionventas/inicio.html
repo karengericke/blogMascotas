@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Este es un proyecto creado con django para coderhouse" />
         <meta name="author" content="juan huertas" />
-        <title>Luxurycars Latam para coderhouse</title>
+        <title>Mascotas Blog</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="/static/gestionventas/assets/favicon.ico" /> 
         <!-- Bootstrap icons-->
@@ -20,7 +20,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="{% url 'inicio' %}">Luxury Cars Latinoamerica</a>
+                    <a class="navbar-brand" href="{% url 'inicio' %}">Blog Mascotas</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -44,14 +44,14 @@
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
-                                <h1 class="display-5 fw-bolder text-white mb-2">Encuentra el Auto de tus sueños en luxury cars Latam</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">Ofrecemos grandes marcas de lujo para los gustos mas exclusivos y refinados de todo latinoamerica, supervehiculos, y coches de referencias especiales pregunte por el suyo.</p>
+                                <h1 class="display-5 fw-bolder text-white mb-2">¡Blog de Mascotas hermosas y queridas!</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">A todos nos gustan las mascotas, asi que quisimos acercarte las mejores y mas queridas de la historia de todos los tiempos. Garantizando su buena crianza y amor diario, te traemos las mejores mascotas.</p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                     <a class="btn btn-outline-light btn-lg px-4" href="{% url 'nosotros' %}">Conocer Mas</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://live.staticflickr.com/65535/51883082530_ae1e75707f.jpg" alt="..." /></div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://i.pinimg.com/564x/f6/59/03/f659032635b1c73ab26271168ac9062a.jpg" alt="..." /></div>
                     </div>
                 </div>
             </header>
@@ -59,28 +59,18 @@
             <section class="py-5" id="features">
                 <div class="container px-5 my-5">
                     <div class="row gx-5">
-                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Acompañamiento y servicios de preventa y postventa</h2></div>
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Mira las fotos mas tiernas de las mascotas mas hermosas</h2></div>
                         <div class="col-lg-8">
                             <div class="row gx-5 row-cols-1 row-cols-md-2">
                                 <div class="col mb-5 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                                    <h2 class="h5">Portafolio Robusto</h2>
-                                    <p class="mb-0">Disponemos de un amplio portafolio de marcas top premium en distintas categorias para los gustos mas exclusivos</p>
-                                </div>
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                                    <h2 class="h5">Nos Adaptamos a sus necesidades</h2>
-                                    <p class="mb-0">Servicios bajo demanda, tramites de importación, seguros, mecanicos autorizados, entre otros</p>
-                                </div>
-                                <div class="col mb-5 mb-md-0 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                    <h2 class="h5">En las mayores ciudades de Latam</h2>
-                                    <p class="mb-0">Disponemos de locación en las principales de ciudades de latinoameria, pregunte por la soya y con gusto le atenderemos personalmente.</p>
+                                    <h2 class="h5">Fotitos de mascotas</h2>
+                                    <p class="mb-0">Encuentra las mejores fotos de mascotas, seguro alguna ya la conoces, seguro alguna te pueda sorprender!</p>
                                 </div>
                                 <div class="col h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                    <h2 class="h5">Vehiculos de las mas altas prestaciones</h2>
-                                    <p class="mb-0">Somos distribuidores oficiales para latam de las más prestigiosas casas (Ferrari, Lamborghini, Porsche, Aston Martin entre otras arribos de nuevos vehículos cada semana. </p>
+                                    <h2 class="h5">Conciencia limpia</h2>
+                                    <p class="mb-0">Buscamos y evaluamos las fotos de las mascotas no solo por su obvia hermosura estetica si no tambien por sus rigurosos cuidados y amor</p>
                                 </div>
                             </div>
                         </div>
@@ -93,13 +83,14 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-10 col-xl-7">
                             <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"Como empresa estamos orgullosos de los productos y servicios que vendemos porque cada uno de todas las personas que trabajamos en esta compañía aportamos nuestro conocimiento y experiencia día tras día para dejar la camiseta por nuestros clientes en cada operación; eso nos diferencia de la competencia y nos lleva a las alturas en los negocios."</div>
+                                <div class="fs-4 mb-4 fst-italic">"Nos encantan las mascotas, y por eso decidimos hacer un proyecto en donde pudieramos tener consolidadas todas las mascotas de nuestros cercanos, al alcance de la mano, nuestro sueño es que exista una página para todas las mascotas del mundo"</div>
                                 <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="https://live.staticflickr.com/65535/51882540118_5d74e6877f_t.jpg" alt="..." />
+                                    <img class="rounded-circle me-3" src="https://media-exp1.licdn.com/dms/image/C4D03AQHmeclfLL6NUw/profile-displayphoto-shrink_200_200/0/1610403356758?e=1648080000&v=beta&t=rr4T1M1eyWA3XWoejDOd03mwNYar7hDuA5MU_UIeyvc" alt="..." />
+                                    <img class="rounded-circle me-3" src="https://media-exp1.licdn.com/dms/image/C4D03AQEnwmEWn7o25A/profile-displayphoto-shrink_200_200/0/1609435932944?e=1648684800&v=beta&t=nVX8OmCmkJPCLUr5M6HCH0MXUU1zTEAbkKqqt0ID4_o" alt="..." />
                                     <div class="fw-bold">
-                                        Juan Huertas
+                                        Karen Gericke & Leandro Garcia
                                         <span class="fw-bold text-primary mx-1">/</span>
-                                        CEO, Luxurycars Latam
+                                        CO-creadores del blog de mascotas
                                     </div>
                                 </div>
                             </div>
