@@ -1,6 +1,6 @@
 from django.urls import path
 from django.urls.conf import include
-from gestionventas import views
+from mascotasblog import views
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -21,6 +21,6 @@ urlpatterns = [
     path('modificar/<pk>/', views.ModificarVendedores.as_view(), name='Modificar'),
     path('eliminar/<pk>/', views.BorrarVendedores.as_view(), name='Eliminar'), 
     path('registrar/', views.register, name='registrar'), 
-    path('logout/', LogoutView.as_view(template_name='gestionventas/logout.html'), name='logout'), 
+    path('logout/', LogoutView.as_view(template_name='mascotasblog/logout.html'), name='logout'), 
 
 ]

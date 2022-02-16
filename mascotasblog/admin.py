@@ -1,5 +1,5 @@
 from django.contrib import admin
-from gestionventas.models import marcasvehiculo, vendedore, venta
+from mascotasblog.models import marcasvehiculo, vendedore, venta
 
 # Register your models here.
 admin.site.register(marcasvehiculo)
