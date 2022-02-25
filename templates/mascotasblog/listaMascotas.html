@@ -1,11 +1,19 @@
 
+{% extends 'mascotasblog/inicio.html' %}  
+{% load static %}
 
-{% block head_block %}
+
+
+
+
+{% block contenidoquecambia %}
+
 <title>Mascotas</title>
-<a href= {% url 'crearMascota' %}>Añadir una nueva Mascota!!</a>
-{% endblock head_block %}
+<a href="{% url 'crearMascota' %}"> || Nueva Mascota ||</a> 
+<br><br/>
 
-{% block body_block %}
+
+
     <form action= {% url 'listaMascotas' %} method = "GET">
         {% csrf_token %} 
         <p>
@@ -53,4 +61,4 @@
         {% endif %}
     </ul>
 
-{% endblock body_block %}
+{% endblock contenidoquecambia %}
