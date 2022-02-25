@@ -1,0 +1,16 @@
+{% block head_block %}
+<title>Añadir una Mascota</title>
+{% endblock head_block %}
+
+{% block body_block %}
+
+    <h1>Añadir una nueva Mascota</h1>
+    <form action= {% url 'crearMascota' %} method = "POST">
+        {% csrf_token %} 
+        <table>
+            {{formulario.as_table}}
+        </table>
+        <input type = "submit" value="Crear"/>
+    </form>
+    
+{% endblock body_block %}

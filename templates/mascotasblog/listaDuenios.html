@@ -1,0 +1,48 @@
+
+
+{% block head_block %}
+<title>Dueños</title>
+<a href= {% url 'crearDuenio' %}>Añadir una nuevo Dueño!!</a>
+{% endblock head_block %}
+
+{% block body_block %}
+    <form action= {% url 'listaDuenios' %} method = "GET">
+        {% csrf_token %} 
+        <p>
+        <input type = "text" name = 'nombre' placeholder="Nombre a buscar..."/>
+        </p>
+        <p>
+            <input type = "text" name = 'apellido' placeholder="apellido a buscar..."/>
+        </p>
+        <p>
+            <input type = "text" name = 'edad' placeholder="Edad a buscar..."/>
+        </p>
+        <input type = "submit" value="Buscar"/>
+    </form>
+    <ul>
+        {% if duenios %} 
+            {% for duenio in duenios %}
+            <li>
+                {{duenio}}
+            </li>
+            {% endfor %}
+        {% elif error_nombre %}
+            <h3 style = color:red>
+                {{error_nombre}}
+            </h3>
+            {% elif error_apellido %}
+            <h3 style = color:red>
+                {{error_apellido}}
+            </h3>
+        {% elif error_edad %}
+            <h3 style = color:red>
+                {{error_edad}}
+            </h3>
+        {% else %}
+            <h3 style = color:darkolivegreen>
+                No se encontraron Dueños.
+            </h3>          
+        {% endif %}
+    </ul>
+
+{% endblock body_block %}

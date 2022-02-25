@@ -1,0 +1,16 @@
+{% block head_block %}
+<title>Añadir un dueño</title>
+{% endblock head_block %}
+
+{% block body_block %}
+
+    <h1>Añadir un nuevo duepño</h1>
+    <form action= {% url 'crearDuenio' %} method = "POST">
+        {% csrf_token %} 
+        <table>
+            {{formulario.as_table}}
+        </table>
+        <input type = "submit" value="Crear"/>
+    </form>
+    
+{% endblock body_block %}

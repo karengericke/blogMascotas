@@ -1,0 +1,56 @@
+
+
+{% block head_block %}
+<title>Mascotas</title>
+<a href= {% url 'crearMascota' %}>Añadir una nueva Mascota!!</a>
+{% endblock head_block %}
+
+{% block body_block %}
+    <form action= {% url 'listaMascotas' %} method = "GET">
+        {% csrf_token %} 
+        <p>
+        <input type = "text" name = 'nombre' placeholder="Nombre a buscar..."/>
+        </p>
+        <p>
+            <input type = "text" name = 'edad' placeholder="Edad a buscar..."/>
+        </p>
+        <p>
+            <input type = "text" name = 'raza' placeholder="Raza a buscar..."/>
+        </p>
+        <p>
+            <input type = "text" name = 'trucos' placeholder="Truco a buscar..."/>
+        </p>
+        <input type = "submit" value="Buscar"/>
+    </form>
+    <ul>
+        {% if mascotas %} 
+            {% for mascota in mascotas %}
+            <li>
+                {{mascota}}
+            </li>
+            {% endfor %}
+        {% elif error_nombre %}
+            <h3 style = color:red>
+                {{error_nombre}}
+            </h3>
+        {% elif error_edad %}
+            <h3 style = color:red>
+                {{error_edad}}
+            </h3>
+        {% elif error_raza %}
+            <h3 style = color:red>
+                {{error_raza}}
+            </h3>
+        {% elif error_trucos %}
+            <h3 style = color:red>
+                {{error_trucos}}
+            </h3>
+        {% else %}
+            <h3 style = color:darkolivegreen>
+                No se encontraron mascotas.
+            </h3>
+            
+        {% endif %}
+    </ul>
+
+{% endblock body_block %}

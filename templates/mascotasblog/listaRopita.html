@@ -1,0 +1,52 @@
+
+
+{% block head_block %}
+<title>Ropas</title>
+<a href= {% url 'crearRopita' %}>Añadir una nueva Ropa!!!</a>
+{% endblock head_block %}
+
+{% block body_block %}
+    <form action= {% url 'listaRopita' %} method = "GET">
+        {% csrf_token %} 
+        <p>
+        <input type = "text" name = 'nombre' placeholder="Nombre a buscar..."/>
+        </p>
+        <p>
+            <input type = "text" name = 'apellido' placeholder="apellido a buscar..."/>
+        </p>
+        <p>
+            <input type = "text" name = 'edad' placeholder="Edad a buscar..."/>
+        </p>
+        <input type = "submit" value="Buscar"/>
+    </form>
+    <ul>
+        {% if ropita %} 
+            {% for ropita in ropitas %}
+            <li>
+                {{ropita}}
+            </li>
+            {% endfor %}
+        {% elif error_nombre %}
+            <h3 style = color:red>
+                {{error_nombre}}
+            </h3>
+        {% elif error_marca %}
+            <h3 style = color:red>
+                {{error_marca}}
+            </h3>
+        {% elif error_color %}
+            <h3 style = color:red>
+                {{error_color}}
+            </h3>
+        {% elif error_precio %}
+            <h3 style = color:red>
+                {{error_precio}}
+        </h3>
+        {% else %}
+            <h3 style = color:darkolivegreen>
+                No se encontraron Dueños.
+            </h3>          
+        {% endif %}
+    </ul>
+
+{% endblock body_block %}

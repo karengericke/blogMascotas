@@ -1,0 +1,16 @@
+{% block head_block %}
+<title>Añadir Ropa</title>
+{% endblock head_block %}
+
+{% block body_block %}
+
+    <h1>Añadir Ropa</h1>
+    <form action= {% url 'crearRopita' %} method = "POST">
+        {% csrf_token %} 
+        <table>
+            {{formulario.as_table}}
+        </table>
+        <input type = "submit" value="Crear"/>
+    </form>
+    
+{% endblock body_block %}

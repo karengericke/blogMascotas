@@ -1,20 +1,18 @@
 from django import forms
 
-class fMarcas(forms.Form):
-    marca=forms.CharField()
-    serie=forms.CharField()
-    ano_fabricacion=forms.IntegerField()
-    pais_fabricacion=forms.CharField()
+   
+class fMascotas(forms.Form):
+    nombre=forms.CharField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[A-Za-z,á,Á,é,É,í,Í,ó,Ó,ú,Ú,ñ,Ñ, ,]+', 'title':'Solo se permiten letras'}))
+    edad=forms.IntegerField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[0-9 ]+', 'title':'Solo se permiten números'}))
+    raza=forms.CharField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[A-Za-z,á,Á,é,É,í,Í,ó,Ó,ú,Ú,ñ,Ñ, ,]+', 'title':'Solo se permiten letras'}))
+    trucos=forms.CharField(required=False,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[A-Za-z,á,Á,é,É,í,Í,ó,Ó,ú,Ú,ñ,Ñ, ,]+', 'title':'Solo se permiten letras'}))
+class fDuenios(forms.Form):
+    nombre=forms.CharField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[A-Za-z,á,Á,é,É,í,Í,ó,Ó,ú,Ú,ñ,Ñ, ,]+', 'title':'Solo se permiten letras'}))
+    apellido=forms.CharField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[A-Za-z,á,Á,é,É,í,Í,ó,Ó,ú,Ú,ñ,Ñ, ,]+', 'title':'Solo se permiten letras'}))
+    edad=forms.IntegerField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[0-9 ]+', 'title':'Solo se permiten números'}))
 
-class fVentas(forms.Form):
-    vehiculo_vendido= forms.CharField()
-    precio=forms.IntegerField()
-    garantia_tiempo=forms.IntegerField()
-    garantia_kilometros= forms.IntegerField()
-
-class fVendedores(forms.Form):
-    nombre_vendedor=forms.CharField()
-    apellido_vendedor=forms.CharField()
-    email_vendedor=forms.EmailField()
-    sucursal=forms.CharField()
-
+class fRopita(forms.Form):
+    nombre = forms.CharField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[A-Za-z,á,Á,é,É,í,Í,ó,Ó,ú,Ú,ñ,Ñ, ,]+', 'title':'Solo se permiten letras'}))
+    marca = forms.CharField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[A-Za-z,á,Á,é,É,í,Í,ó,Ó,ú,Ú,ñ,Ñ, ,]+', 'title':'Solo se permiten letras'}))
+    color = forms.CharField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[A-Za-z,á,Á,é,É,í,Í,ó,Ó,ú,Ú,ñ,Ñ, ,]+', 'title':'Solo se permiten letras'}))
+    precio = forms.IntegerField(required=True,widget=forms.TextInput(attrs={'class':'form-control' , 'autocomplete': 'off','pattern':'[0-9 ]+', 'title':'Solo se permiten números'})) 

@@ -1,7 +1,7 @@
 from django.contrib import admin
-from mascotasblog.models import marcasvehiculo, vendedore, venta
+from mascotasblog.models import Mascota, Duenio
 
 # Register your models here.
-admin.site.register(marcasvehiculo)
-admin.site.register(vendedore)
-admin.site.register(venta)
+admin.site.register(Mascota)
+admin.site.register(Duenio)
+

@@ -1,30 +1,34 @@
 from django.db import models
 
 # Create your models here.
-
-class marcasvehiculo(models.Model):
-    marca=models.CharField(max_length=25)
-    serie=models.CharField(max_length=25)
-    ano_fabricacion=models.IntegerField()
-    pais_fabricacion=models.CharField(max_length=25)
+  
+class Mascota(models.Model):
+    nombre = models.CharField(max_length=30)
+    edad = models.IntegerField()
+    raza = models.CharField(max_length=30)
+    trucos = models.CharField(max_length=30,null=True)
     
     def __str__(self):
-        return f"{self.marca} - ({self.serie}) {self.ano_fabricacion}"
-
-class vendedore(models.Model):
-    nombre_vendedor=models.CharField(max_length=35)
-    apellido_vendedor=models.CharField(max_length=35)
-    email_vendedor=models.EmailField(max_length=30)
-    sucursal=models.CharField(max_length=30)
-
+        if(self.trucos == None):
+            response = f"{self.nombre} - {self.edad} años, de raza {self.raza}"
+        else:
+            response = f"{self.nombre} - {self.edad} años, de raza {self.raza} y sabe {self.trucos}"          
+        return response
+           
+class Duenio(models.Model):
+    nombre = models.CharField(max_length=30)
+    apellido = models.CharField(max_length=30)
+    edad = models.IntegerField()
+    
     def __str__(self):
-        return f"{self.nombre_vendedor} {self.apellido_vendedor} - ({self.email_vendedor})" 
-
-class venta(models.Model):
-    vehiculo_vendido= models.CharField(max_length=30)
-    precio=models.IntegerField()
-    garantia_tiempo=models.IntegerField()
-    garantia_kilometros= models.IntegerField()
-
+        return f"{self.nombre} - {self.apellido} - {self.edad} años"
+    
+class Ropita(models.Model):
+    nombre = models.CharField(max_length=30)
+    marca = models.CharField(max_length=30)
+    color = models.CharField(max_length=30)
+    precio = models.IntegerField() 
+    
     def __str__(self):
-        return f"{self.vehiculo_vendido} - ($ {self.precio})"   
+        return f"{self.nombre} - {self.marca} de color {self.color} con un precio de ${self.precio} USD"
+    
