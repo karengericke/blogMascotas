@@ -8,6 +8,9 @@ from mascotasblog.models import *
 from mascotasblog.forms import *
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+
 # vistas generales de la app.
 
 def inicio(req):
@@ -69,7 +72,7 @@ def listaMascotas(request):
                          
     return render(request, 'mascotasblog/listaMascotas.html', {'mascotas': mascotas, 'error_nombre': error_nombre, 'error_raza': error_raza, 'error_edad': error_edad, 'error_trucos': error_trucos})
 
-
+@login_required
 def crearMascota(request):
     if request.method == 'POST':
         formulario = fMascotas(request.POST)
@@ -83,6 +86,7 @@ def crearMascota(request):
         
     return render(request, 'mascotasblog/crearMascota.html', {'formulario': formulario})
 
+@login_required
 def crearDuenio(request):
     formulario = fDuenios(request.POST)
 
@@ -99,36 +103,36 @@ def crearDuenio(request):
 
 #########################################################################################################################################
 
-class ListarDuenios(ListView):
+class ListarDuenios(LoginRequiredMixin, ListView):
     model = Duenio
     template_name="mascotasblog/listaDuenios.html" 
-class CrearDuenios(CreateView):
+class CrearDuenios(LoginRequiredMixin, CreateView):
     model = Duenio
     success_url="/mascotasblog/listaDuenios/"
     fields=["nombre", "apellido", "edad"] 
     template_name ="mascotasblog/crearDuenio.html"
     
-class DetalleDuenios(DetailView):
+class DetalleDuenios(LoginRequiredMixin, DetailView):
     model= Duenio
     template_name="mascotasblog/detalles.html"
 
-class ModificarDuenios(UpdateView):
+class ModificarDuenios(LoginRequiredMixin, UpdateView):
     model= Duenio
     success_url="/mascotasblog/listaDuenios/"
     fields=['nombre', 'apellido', 'edad']
     template_name ="mascotasblog/editar.html"
 
-class BorrarDuenios(DeleteView):
+class BorrarDuenios(LoginRequiredMixin, DeleteView):
     model= Duenio
     success_url="/mascotasblog/listaDuenios/"
     template_name ="mascotasblog/borrar.html"
 
 #########################################################################################################################################
 
-class ListarRopitas(ListView):
+class ListarRopitas(LoginRequiredMixin, ListView):
     model = Ropita
     template_name="mascotasblog/listaRopita.html" 
-class CrearRopitas(CreateView):
+class CrearRopitas(LoginRequiredMixin, CreateView):
     model = Ropita
     success_url="/mascotasblog/listaRopita/"
     fields=["nombre", "marca", "color", "precio"] 
