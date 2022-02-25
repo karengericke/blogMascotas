@@ -3,7 +3,7 @@
 
 {% block contenidoquecambia %}
 
-<h5>Modificar Vendedor</h5>
+<h5>Modificar Dueño</h5>
 </br>
 <form method="post"> {% csrf_token %}
     <table>
@@ -13,7 +13,7 @@
     <input type="submit" value="Modificar" />
 </form>
 <br></br>
-<a href="{% url 'listar' %}">||| Volver a Empleados |||</a>
+<a href="{% url 'listaDuenios' %}">||| Volver a los Dueños|||</a>
 
 {% endblock contenidoquecambia %}
             

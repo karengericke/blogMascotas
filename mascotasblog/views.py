@@ -83,6 +83,46 @@ def crearMascota(request):
         
     return render(request, 'mascotasblog/crearMascota.html', {'formulario': formulario})
 
+def crearDuenio(request):
+    formulario = fDuenios(request.POST)
+
+    if formulario.is_valid():
+        info = formulario.cleaned_data
+        duenio = Duenio (nombre=info['nombre'], apellido=info['apellido'], edad=info['edad'])
+        duenio.save()
+        return render(request, "mascotasblog/crearDuenio.html/")
+    
+    else:
+        formulario = fDuenios()
+    
+    return render (request, "mascotasblog/crearDuenio.html", {"formulario":formulario})
+
+#########################################################################################################################################
+
+class ListarDuenios(ListView):
+    model = Duenio
+    template_name="mascotasblog/listaDuenios.html" 
+class CrearDuenios(CreateView):
+    model = Duenio
+    success_url="/mascotasblog/listaDuenios/"
+    fields=["nombre", "apellido", "edad"] 
+    template_name ="mascotasblog/crearDuenio.html"
+    
+class DetalleDuenios(DetailView):
+    model= Duenio
+    template_name="mascotasblog/detalles.html"
+
+class ModificarDuenios(UpdateView):
+    model= Duenio
+    success_url="/mascotasblog/listaDuenios/"
+    fields=['nombre', 'apellido', 'edad']
+    template_name ="mascotasblog/editar.html"
+
+class BorrarDuenios(DeleteView):
+    model= Duenio
+    success_url="/mascotasblog/listaDuenios/"
+    template_name ="mascotasblog/borrar.html"
+
 #########################################################################################################################################
 
 class ListarRopitas(ListView):
@@ -140,18 +180,18 @@ def login_request(request):
 
 def register(request):
 
-      if (request.method == "POST"):
+    if (request.method == "POST"):
 
-            form = UserCreationForm(request.POST)
-            
-            if form.is_valid():
+        form = UserCreationForm(request.POST)
+        
+        if form.is_valid():
 
-                  username = form.cleaned_data['username']
-                  form.save()
-                  return render(request,"mascotasblog/inicio.html",   {"mensaje": "Se ha creado exitosamente su usuario, Bienvenido a bordo marinero 😎"} )
+            username = form.cleaned_data['username']
+            form.save()
+            return render(request,"mascotasblog/inicio.html",   {"mensaje": "Se ha creado exitosamente su usuario, Bienvenido a bordo marinero 😎"} )
 
-      else:
-            form = UserCreationForm()       
-         
+    else:
+        form = UserCreationForm()       
+        
 
-      return render(request,"mascotasblog/registro.html" ,  {"form":form})
+    return render(request,"mascotasblog/registro.html" ,  {"form":form})

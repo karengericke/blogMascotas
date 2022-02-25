@@ -1,16 +1,18 @@
-{% block head_block %}
-<title>Añadir un dueño</title>
-{% endblock head_block %}
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
 
-{% block body_block %}
+{% block contenidoquecambia %}
 
-    <h1>Añadir un nuevo duepño</h1>
-    <form action= {% url 'crearDuenio' %} method = "POST">
-        {% csrf_token %} 
-        <table>
-            {{formulario.as_table}}
-        </table>
-        <input type = "submit" value="Crear"/>
-    </form>
-    
-{% endblock body_block %}
+<h5>En este formulario ingresar nuevos Dueños</h5>
+</br>        
+<form action="" method="POST">{% csrf_token %}
+    <table>
+        {{formulario.as_table}}
+    </table>
+    <br></br>
+    <input type="submit" value="Registrar Dueño">    
+</form>
+</br>
+<a href="{% url 'listaDuenios' %}">||| Volver a la lista de Dueños |||</a>
+
+{% endblock contenidoquecambia %}

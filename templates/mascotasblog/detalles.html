@@ -3,16 +3,15 @@
 
 {% block contenidoquecambia %}
 
-<h5>Detalle del usuario: <i>  {{ vendedore.nombre_vendedor }}</i> </h5>
+<h5>Detalle del Dueño: <i>  {{ Duenio.nombre }}</i> </h5>
 </br>
 
-<p><strong>NOMBRE:<i>  {{ vendedore.nombre_vendedor }}</i></strong></p>
-<p><strong>APELLIDO:<i>  {{ vendedore.apellido_vendedor }}</i></strong></p>
-<p><strong>EMAIL:<i>  {{ vendedore.email_vendedor }}</i></strong></p>
-<p><strong>SUCURSAL:<i>  {{ vendedore.sucursal }}</i></strong></p>
+<p><strong>NOMBRE:<i>  {{ Duenio.nombre }}</i></strong></p>
+<p><strong>APELLIDO:<i>  {{ Duenio.apellido }}</i></strong></p>
+<p><strong>EDAD:<i>  {{ Duenio.edad }}</i></strong></p>
 
 <p>
-    <a href="{% url 'listar'  %}">Regresar</a>
+    <a href="{% url 'listaDuenios'  %}">Regresar</a>
 </p>
 
 {% endblock contenidoquecambia %}

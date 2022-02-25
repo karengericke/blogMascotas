@@ -1,48 +1,32 @@
 
 
-{% block head_block %}
-<title>Dueños</title>
-<a href= {% url 'crearDuenio' %}>Añadir una nuevo Dueño!!</a>
-{% endblock head_block %}
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
 
-{% block body_block %}
-    <form action= {% url 'listaDuenios' %} method = "GET">
-        {% csrf_token %} 
-        <p>
-        <input type = "text" name = 'nombre' placeholder="Nombre a buscar..."/>
-        </p>
-        <p>
-            <input type = "text" name = 'apellido' placeholder="apellido a buscar..."/>
-        </p>
-        <p>
-            <input type = "text" name = 'edad' placeholder="Edad a buscar..."/>
-        </p>
-        <input type = "submit" value="Buscar"/>
-    </form>
-    <ul>
-        {% if duenios %} 
-            {% for duenio in duenios %}
-            <li>
-                {{duenio}}
-            </li>
-            {% endfor %}
-        {% elif error_nombre %}
-            <h3 style = color:red>
-                {{error_nombre}}
-            </h3>
-            {% elif error_apellido %}
-            <h3 style = color:red>
-                {{error_apellido}}
-            </h3>
-        {% elif error_edad %}
-            <h3 style = color:red>
-                {{error_edad}}
-            </h3>
-        {% else %}
-            <h3 style = color:darkolivegreen>
-                No se encontraron Dueños.
-            </h3>          
-        {% endif %}
-    </ul>
+{% block contenidoquecambia %}
 
-{% endblock body_block %}
+<h5>Lista de Dueños</h5>
+</br>
+<ul>
+    {% for Duenio in object_list %}
+
+    <li>        
+                <p><strong>NOMBRE: {{ Duenio.nombre }} </strong></p>
+                <p><strong>APELLIDO: {{ Duenio.apellido }} </strong></p>
+                <p><strong>EDAD: {{ Duenio.edad }} </strong></p>
+                
+                <p> 
+                    <a href="{% url 'Detalle' Duenio.id %}">Ver</a> | 
+                    <a href="{% url 'Modificar' Duenio.id %}">Editar</a> | 
+                    <a href="{% url 'Eliminar' Duenio.id %}">Borrar</a>                
+                </p> 
+
+        {% endfor %}
+    </li>
+        
+</ul>
+<a href="{% url 'crearDuenio' %}"> || Nuevo Dueño ||</a>  
+
+{% endblock contenidoquecambia %}
+            
+        <!-- FIN CONTENIDO DINAMICO DE PAGINA-->

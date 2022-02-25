@@ -3,18 +3,18 @@
 
 {% block contenidoquecambia %}
 
-<h5>Eliminar Usuario:</h5>
+<h5>Eliminar Dueño:</h5>
 </br>
 
 <form method="POST"> {% csrf_token %}
 
-    <p><strong>Esta completamente seguro que desea eliminar este empleado"{{ object }}"?</strong></p>
+    <p><strong>Esta completamente seguro que desea eliminar este dueño"{{ object }}"?</strong></p>
 
-<input type="submit" value="Estoy Seguro Borrar Empleado">
+<input type="submit" value="Estoy Seguro Borrar Dueño">
 </form>
 
 <br></br>
-<a href="{% url 'listar' %}">||| Volver a Empleados |||</a>
+<a href="{% url 'listaDuenios' %}">||| Volver a los Dueños |||</a>
 
 {% endblock contenidoquecambia %}
             
