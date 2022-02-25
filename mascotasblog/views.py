@@ -101,6 +101,21 @@ def crearDuenio(request):
     
     return render (request, "mascotasblog/crearDuenio.html", {"formulario":formulario})
 
+@login_required
+def crearRopita(request):
+    formulario = fRopita(request.POST)
+
+    if formulario.is_valid():
+        info = formulario.cleaned_data
+        ropita = Ropita (nombre=info['nombre'], marca=info['marca'], color=info['color'], precio=info['precio'])
+        ropita.save()
+        return render(request, "mascotasblog/crearRopita.html/")
+    
+    else:
+        formulario = fRopita()
+    
+    return render (request, "mascotasblog/crearRopita.html", {"formulario":formulario})
+
 #########################################################################################################################################
 
 class ListarDuenios(LoginRequiredMixin, ListView):
@@ -114,18 +129,18 @@ class CrearDuenios(LoginRequiredMixin, CreateView):
     
 class DetalleDuenios(LoginRequiredMixin, DetailView):
     model= Duenio
-    template_name="mascotasblog/detalles.html"
+    template_name="mascotasblog/detalleDuenio.html"
 
 class ModificarDuenios(LoginRequiredMixin, UpdateView):
     model= Duenio
     success_url="/mascotasblog/listaDuenios/"
     fields=['nombre', 'apellido', 'edad']
-    template_name ="mascotasblog/editar.html"
+    template_name ="mascotasblog/editarDuenio.html"
 
 class BorrarDuenios(LoginRequiredMixin, DeleteView):
     model= Duenio
     success_url="/mascotasblog/listaDuenios/"
-    template_name ="mascotasblog/borrar.html"
+    template_name ="mascotasblog/borrarDuenio.html"
 
 #########################################################################################################################################
 
@@ -138,20 +153,20 @@ class CrearRopitas(LoginRequiredMixin, CreateView):
     fields=["nombre", "marca", "color", "precio"] 
     template_name ="mascotasblog/crearRopita.html"
     
-# class DetalleRopitas(DetailView):
-#     model= Ropita
-#     template_name="mascotasblog/detalles.html"
+class DetalleRopitas(DetailView):
+    model= Ropita
+    template_name="mascotasblog/detallesRopita.html"
 
-# class ModificarRopitas(UpdateView):
-#     model= Ropita
-#     success_url="/mascotasblog/listaVendedores/"
-#     fields=['nombre_vendedor', 'apellido_vendedor', 'email_vendedor', 'sucursal']
-#     template_name ="mascotasblog/editar.html"
+class ModificarRopitas(UpdateView):
+    model= Ropita
+    success_url="/mascotasblog/listaVendedores/"
+    fields=['nombre_vendedor', 'apellido_vendedor', 'email_vendedor', 'sucursal']
+    template_name ="mascotasblog/editarRopita.html"
 
-# class BorrarRopitas(DeleteView):
-#     model= Ropita
-#     success_url="/mascotasblog/listaVendedores/"
-#     template_name ="mascotasblog/borrar.html"
+class BorrarRopitas(DeleteView):
+    model= Ropita
+    success_url="/mascotasblog/listaVendedores/"
+    template_name ="mascotasblog/borrarRopita.html"
     
 #########################################################################################################################################
 

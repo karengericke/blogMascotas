@@ -1,0 +1,19 @@
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
+
+{% block contenidoquecambia %}
+
+<h5>Detalle del Dueño: <i>  {{ Duenio.nombre }}</i> </h5>
+</br>
+
+<p><strong>NOMBRE:<i>  {{ Duenio.nombre }}</i></strong></p>
+<p><strong>APELLIDO:<i>  {{ Duenio.apellido }}</i></strong></p>
+<p><strong>EDAD:<i>  {{ Duenio.edad }}</i></strong></p>
+
+<p>
+    <a href="{% url 'listaDuenios'  %}">Regresar</a>
+</p>
+
+{% endblock contenidoquecambia %}
+            
+        <!-- FIN CONTENIDO DINAMICO DE PAGINA-->

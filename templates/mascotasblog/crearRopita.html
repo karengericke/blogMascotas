@@ -1,16 +1,18 @@
-{% block head_block %}
-<title>Añadir Ropa</title>
-{% endblock head_block %}
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
 
-{% block body_block %}
+{% block contenidoquecambia %}
 
-    <h1>Añadir Ropa</h1>
-    <form action= {% url 'crearRopita' %} method = "POST">
-        {% csrf_token %} 
-        <table>
-            {{formulario.as_table}}
-        </table>
-        <input type = "submit" value="Crear"/>
-    </form>
-    
-{% endblock body_block %}
+<h5>En este formulario puedes ingresar nuevas Ropitas</h5>
+</br>        
+<form action="" method="POST">{% csrf_token %}
+    <table>
+        {{formulario.as_table}}
+    </table>
+    <br></br>
+    <input type="submit" value="Registrar Ropita">    
+</form>
+</br>
+<a href="{% url 'listaRopita' %}">||| Volver a la lista de Ropitas |||</a>
+
+{% endblock contenidoquecambia %}

@@ -1,33 +1,33 @@
 
 
 {% extends 'mascotasblog/inicio.html' %}  
-{% load static %}
+    {% load static %}
 
 {% block contenidoquecambia %}
 
 <h5>Lista de Ropitas</h5>
 </br>
 <ul>
-{% for Ropita in object_list %}
+    {% for Ropita in object_list %}
 
-<li>        
-            <p><strong>NOMBRE: {{ Ropita.nombre }} </strong></p>
-            <p><strong>MARCA: {{ Ropita.marca }} </strong></p>
-            <p><strong>COLOR: {{ Ropita.color }} </strong></p>
-            <p><strong>PRECIO: {{ Ropita.precio }} </strong></p>
-            
-            <!-- <p> 
-                <a href="{% url 'Detalle' vendedore.id %}">Ver</a> | 
-                <a href="{% url 'Modificar' vendedore.id %}">Editar</a> | 
-                <a href="{% url 'Eliminar' vendedore.id %}">Borrar</a> 
-            
-            </p>  -->
+    <li>        
+                <p><strong>NOMBRE: {{ Ropita.nombre }} </strong></p>
+                <p><strong>MARCA: {{ Ropita.marca }} </strong></p>
+                <p><strong>COLOR: {{ Ropita.color }} </strong></p>
+                <p><strong>PRECIO: {{ Ropita.precio }} </strong></p>
+                
+                <p> 
+                    <a href="{% url 'detallesRopita' Ropita.id %}">Ver</a> | 
+                    <a href="{% url 'modificarRopita' Ropita.id %}">Editar</a> | 
+                    <a href="{% url 'borrarRopita' Ropita.id %}">Borrar</a> 
+                
+                </p> 
 
-    {% endfor %}
-</li>
+        {% endfor %}
+    </li>
     
 </ul>
-<!-- <a href="{% url 'vendedores' %}"> || Nuevo Empleado ||</a>   -->
+<a href="{% url 'crearRopita' %}"> || Nuevo Ropita ||</a>  
 
 {% endblock contenidoquecambia %}
         

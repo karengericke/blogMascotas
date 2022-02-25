@@ -1,0 +1,20 @@
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
+
+{% block contenidoquecambia %}
+
+<h5>Modificar Dueño</h5>
+</br>
+<form method="post"> {% csrf_token %}
+    <table>
+        {{ form.as_p }}
+    </table>
+    
+    <input type="submit" value="Modificar" />
+</form>
+<br></br>
+<a href="{% url 'listaDuenios' %}">||| Volver a los Dueños|||</a>
+
+{% endblock contenidoquecambia %}
+            
+        <!-- FIN CONTENIDO DINAMICO DE PAGINA-->

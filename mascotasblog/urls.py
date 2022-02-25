@@ -13,6 +13,9 @@ urlpatterns = [
     
     path('crearDuenio/', views.crearDuenio, name="crearDuenio"),
     path('crearDuenio', views.CrearDuenios.as_view(), name='crearDuenio'),
+    
+    path('crearRopita/', views.crearRopita, name="crearRopita"),
+    path('crearRopita', views.CrearRopitas.as_view(), name='crearRopita'),
     path('listaMascotas/crear/', views.crearMascota, name='crearMascota'),
 
     path('nosotros/', views.nosotros, name="nosotros"),
@@ -22,8 +25,12 @@ urlpatterns = [
     path('registrar/', views.register, name='registrar'), 
     path('logout/', LogoutView.as_view(template_name='mascotasblog/logout.html'), name='logout'), 
     
-    path('detalle/<pk>/', views.DetalleDuenios.as_view(), name='Detalle'),
-    path('modificar/<pk>/', views.ModificarDuenios.as_view(), name='Modificar'),
-    path('eliminar/<pk>/', views.BorrarDuenios.as_view(), name='Eliminar'), 
+    path('detalleDuenio/<pk>/', views.DetalleDuenios.as_view(), name='detalleDuenio'),
+    path('modificarDuenio/<pk>/', views.ModificarDuenios.as_view(), name='modificarDuenio'),
+    path('eliminarDuenio/<pk>/', views.BorrarDuenios.as_view(), name='eliminarDuenio'),
+     
+    path('detalleRopita/<pk>/', views.DetalleRopitas.as_view(), name='detalleRopita'),
+    path('modificarRopita/<pk>/', views.ModificarRopitas.as_view(), name='modificarRopita'),
+    path('eliminarRopita/<pk>/', views.BorrarRopitas.as_view(), name='eliminarRopita'), 
 
 ]

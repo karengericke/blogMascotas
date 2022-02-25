@@ -1,0 +1,21 @@
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
+
+{% block contenidoquecambia %}
+
+<h5>Eliminar Dueño:</h5>
+</br>
+
+<form method="POST"> {% csrf_token %}
+
+    <p><strong>Esta completamente seguro que desea eliminar este dueño"{{ object }}"?</strong></p>
+
+<input type="submit" value="Estoy Seguro Borrar Dueño">
+</form>
+
+<br></br>
+<a href="{% url 'listaDuenios' %}">||| Volver a los Dueños |||</a>
+
+{% endblock contenidoquecambia %}
+            
+        <!-- FIN CONTENIDO DINAMICO DE PAGINA-->

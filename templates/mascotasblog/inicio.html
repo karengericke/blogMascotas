@@ -29,9 +29,16 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'mascotas' %}">Mascotas</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'listaMascotas' %}">Lista de Mascotas!</a></li>   
                             <li class="nav-item"><a class="nav-link" href="{% url 'listaDuenios' %}">Lista de Dueños!</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'listaRopita' %}">Lista de Ropitas!</a></li>                        
-                            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'registrar' %}">Registrar</a></li>                         
+                            <li class="nav-item"><a class="nav-link" href="{% url 'listaRopita' %}">Lista de Ropitas!</a></li> 
+                            <div style="margin-left: 100px; display: flex;">                               
+                            {% if not request.user.is_authenticated %}                       
+                            <li class="nav-item"><a style="border: 1px solid white" class="nav-link" href="{% url 'login' %}">Login</a></li>
+                            <li class="nav-item"><a style="border: 1px solid white" class="nav-link" href="{% url 'registrar' %}">Registrar</a></li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                                <li class="nav-item"><a  style="border: 1px solid white"class="nav-link" href="{% url 'logout' %}">Log out</a></li>                             
+                            </div>
+                            {% endif %}               
                         </ul>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
-{% block head_block %}
-<title>Añadir una Mascota</title>
-{% endblock head_block %}
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
 
-{% block body_block %}
+{% block contenidoquecambia %}
+<title>Añadir una Mascota</title>
 
     <h1>Añadir una nueva Mascota</h1>
     <form action= {% url 'crearMascota' %} method = "POST">
@@ -12,5 +12,5 @@
         </table>
         <input type = "submit" value="Crear"/>
     </form>
-    
-{% endblock body_block %}
+    <a href="{% url 'listaMascotas' %}"> || Regresar ||</a>  
+{% endblock contenidoquecambia %}

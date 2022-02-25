@@ -16,9 +16,9 @@
                 <p><strong>EDAD: {{ Duenio.edad }} </strong></p>
                 
                 <p> 
-                    <a href="{% url 'Detalle' Duenio.id %}">Ver</a> | 
-                    <a href="{% url 'Modificar' Duenio.id %}">Editar</a> | 
-                    <a href="{% url 'Eliminar' Duenio.id %}">Borrar</a>                
+                    <a href="{% url 'detalleDuenio' Duenio.id %}">Ver</a> | 
+                    <a href="{% url 'modificarDuenio' Duenio.id %}">Editar</a> | 
+                    <a href="{% url 'eliminarDuenio' Duenio.id %}">Borrar</a>                
                 </p> 
 
         {% endfor %}
