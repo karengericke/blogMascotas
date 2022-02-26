@@ -11,6 +11,17 @@ _Posicionarte sobre la raíz del proyecto y ejecutar el comando "python manage.p
 
 _Para correr el proyecto necesitas tener: Python 3.9.10 y Django 4.0_
 
+### Recordatorio 📋
+
+_Recuerda que para que funcione el proyecto debes hacer sus respectivas migraciones._
+_Las mismas se hacen escribiendo por consola:_
+```
+python manage.py makemigrations
+```
+
+```
+python manage.py migrate
+```
 
 ### ¿Cómo se qué versión tengo? 🔧
 
