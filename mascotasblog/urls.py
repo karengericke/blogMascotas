@@ -11,10 +11,8 @@ urlpatterns = [
     path('listaRopita/', views.ListarRopitas.as_view(), name='listaRopita'), 
     path('listaDuenios/', views.ListarDuenios.as_view(), name='listaDuenios'), 
     
-    path('crearDuenio/', views.crearDuenio, name="crearDuenio"),
     path('crearDuenio', views.CrearDuenios.as_view(), name='crearDuenio'),
     
-    path('crearRopita/', views.crearRopita, name="crearRopita"),
     path('crearRopita', views.CrearRopitas.as_view(), name='crearRopita'),
     path('listaMascotas/crear/', views.crearMascota, name='crearMascota'),
 

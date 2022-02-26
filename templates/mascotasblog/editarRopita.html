@@ -1,0 +1,20 @@
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
+
+{% block contenidoquecambia %}
+
+<h5>Modificar Ropita</h5>
+</br>
+<form method="post"> {% csrf_token %}
+    <table>
+        {{ form.as_p }}
+    </table>
+    
+    <input type="submit" value="Modificar" />
+</form>
+<br></br>
+<a href="{% url 'listaRopita' %}">||| Volver a las Ropitas|||</a>
+
+{% endblock contenidoquecambia %}
+            
+        <!-- FIN CONTENIDO DINAMICO DE PAGINA-->

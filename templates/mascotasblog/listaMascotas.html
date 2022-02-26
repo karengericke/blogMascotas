@@ -28,8 +28,9 @@
         <p>
             <input type = "text" name = 'trucos' placeholder="Truco a buscar..."/>
         </p>
-        <input type = "submit" value="Buscar"/>
+        <input type = "submit" value = "Buscar" name = "Buscar"/>
     </form>
+
     <ul>
         {% if mascotas %} 
             {% for mascota in mascotas %}
@@ -53,12 +54,7 @@
             <h3 style = color:red>
                 {{error_trucos}}
             </h3>
-        {% else %}
-            <h3 style = color:darkolivegreen>
-                No se encontraron mascotas.
-            </h3>
-            
-        {% endif %}
+        {% endif %}              
     </ul>
 
 {% endblock contenidoquecambia %}

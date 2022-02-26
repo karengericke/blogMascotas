@@ -1,0 +1,20 @@
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
+
+{% block contenidoquecambia %}
+
+<h5>Detalle de la Ropita: <i>  {{ object.nombre }}</i> </h5>
+</br>
+
+<p><strong>NOMBRE:<i>  {{ object.nombre }}</i></strong></p>
+<p><strong>MARCA:<i>  {{ object.marca }}</i></strong></p>
+<p><strong>COLOR:<i>  {{ object.color }}</i></strong></p>
+<p><strong>PRECIO:<i>  {{ object.precio }}</i></strong></p>
+
+<p>
+    <a href="{% url 'listaRopita'  %}">Regresar</a>
+</p>
+
+{% endblock contenidoquecambia %}
+            
+        <!-- FIN CONTENIDO DINAMICO DE PAGINA-->

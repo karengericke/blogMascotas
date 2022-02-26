@@ -1,0 +1,21 @@
+{% extends 'mascotasblog/inicio.html' %}  
+    {% load static %}
+
+{% block contenidoquecambia %}
+
+<h5>Eliminar Ropita:</h5>
+</br>
+
+<form method="POST"> {% csrf_token %}
+
+    <p><strong>Esta completamente seguro que desea eliminar este "ROPITA""{{ object }}"?</strong></p>
+
+<input type="submit" value="Estas Seguro de Borrar la Ropita">
+</form>
+
+<br></br>
+<a href="{% url 'listaRopita' %}">||| Volver a las Ropitas |||</a>
+
+{% endblock contenidoquecambia %}
+            
+        <!-- FIN CONTENIDO DINAMICO DE PAGINA-->
